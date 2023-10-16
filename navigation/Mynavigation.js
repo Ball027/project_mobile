@@ -9,7 +9,6 @@ import Homescreen from "./screen/Homescreen";
 import Policyscreen from "./screen/Policyscreen";
 import Loginscreen from "./screen/Loginscreen";
 import Settingscreen from "./screen/Settingscreen";
-import Scorescreen from "./screen/Scorescreen";
 
 const Tab = createBottomTabNavigator();
 const MainNavigator = createDrawerNavigator();
@@ -18,17 +17,17 @@ function Tabnavigator(){
     <Tab.Navigator screenOptions={{ headerShown: false }}>
         <Tab.Screen name="Score" component={Scorescreen} options={{
           tabBarIcon: () => {
-            return <Ionicons name="alert-outline" size={30} color="black" />;
+            return <Ionicons name="alert-outline" size={30} color="orange" />;
           },
         }} />
         <Tab.Screen name="Home" component={Homescreen} options={{
           tabBarIcon:() =>{
-            return<Ionicons name="cellular-sharp" size={30} color="black" />;
+            return<Ionicons name="cellular-sharp" size={30} color="orange" />;
           }
         }}/>
         <Tab.Screen name="Policy" component={Policyscreen} options={{
           tabBarIcon:() =>{
-            return<Ionicons name="pulse-sharp" size={30} color="black" />;
+            return<Ionicons name="pulse-sharp" size={30} color="orange" />;
           }
         }}/>
       </Tab.Navigator>
