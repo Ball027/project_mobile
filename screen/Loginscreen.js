@@ -1,41 +1,43 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, Button, Image, TextInput, TouchableOpacity } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
-const LoginScreen = ({ route, navigation }) => {
-  const { prev } = route.params;
+const Loginscreen = ({route, navigation}) => {
+  // const { prev } = route.params;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.positionpic}>
       <Image 
           style={styles.loginpic}
-          source={require('../assets/user-login.png')}
+          source={require('../assets/kmitl.png')}
         />
+      <View>
+        <Text style={styles.head}>KMITL SPORT</Text>
+        <Text style={styles.head2}>พระจอมเกล้าลาดกระบัง</Text>
       </View>
-      <Ionicons name="ios-person-outline" size={30} color="green" style={{marginRight: 270}}/>
+      </View>
+      <Text style={styles.content}>Username</Text>
       <TextInput
         style={styles.txtinput}
         placeholder="Username"
         keyboardType="email-address"
-        placeholderTextColor={"green"}
       />
-      <Ionicons name="ios-lock-closed-outline" size={30} color="gold" style={{marginRight: 270}}/>
+      <Text style={styles.content}>Password</Text>
       <TextInput
         style={styles.txtinput}
         placeholder="Password"
-        placeholderTextColor={"gold"}
-        secureTextEntry={true}
+        keyboardType="email-address"
       />
       <View style={styles.btnOption}>
-        <TouchableOpacity 
-        onPress={() => {
-          navigation.navigate("S3");
-        }}>
-          <Text style={{textAlign: 'center', 
-          marginVertical: 10, 
-          fontWeight: 700, fontSize: 20, color: '#fff'}}>LOG IN</Text>
-        </TouchableOpacity>
+        <Button 
+          title="Log in"
+          onPress={() => {
+            navigation.navigate("Draw", {screen:"Home"});
+          }}
+        />
       </View>
+        <TouchableOpacity style={styles.sign} onPress={()=>{navigation.navigate("Signin")}}>
+          <Text>Don't have any account?sign in</Text>
+        </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -43,7 +45,7 @@ const LoginScreen = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#c0c0c0",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "flex-start",
     paddingHorizontal: 20,
@@ -52,14 +54,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingBottom: 10,
     paddingRight: 210,
-    color: 'green',
+    color: 'black',
+    fontWeight:"bold"
   },
   btnOption: {
-    backgroundColor: "blue",
     width: 300,
-    height: 50,
-    marginVertical: 40,
-    borderRadius: 10
+    paddingTop: 25,
+    paddingBottom: 25,
   },
   btnBack: {
     width: 100,
@@ -71,8 +72,11 @@ const styles = StyleSheet.create({
     height: 100,
   },
   positionpic: {
+    justifyContent:"center",
+    textAlign:"center",
     paddingTop: 50,
     paddingBottom: 50,
+    flexDirection:"row"
   },
   txtinput: {
     width: 300,
@@ -81,6 +85,20 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 2,
   },
+  head:{
+    fontSize:24,
+    color:"orange",
+    fontWeight:"bold",
+    marginTop:20
+  },
+  head2:{
+    fontSize:18,
+    color:"orange",
+    fontWeight:"bold",
+  },
+  sign:{
+    color:"#DDDDDD",
+  }
 });
 
-export default LoginScreen;
+export default Loginscreen;
