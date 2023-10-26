@@ -11,7 +11,7 @@ const Homescreen = ({route,navigation}) => {
         image={itemData.item.imageurl}
         onSelectSport={() => {
           // เขียนโค้ดเพิ่ม
-          // navigation.navigate("MealDetail",{mealtitle:itemData.item.title,mealsteps:itemData.item.steps})
+          navigation.navigate("Calendar",{name:itemData.item.name})
         }}
       />
     );
@@ -24,13 +24,12 @@ const Homescreen = ({route,navigation}) => {
   // );
 
   return(
-    <View style={styles.screen}>
+    <View style={styles.container}>
     <FlatList
       style={{ width: "100%" }}
       data={SPORTS}
       renderItem={renderSportItem}
     />
-    <Text>Hi</Text>
   </View>
   );
 };
@@ -40,17 +39,8 @@ const Homescreen = ({route,navigation}) => {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
+      elevation:4,
     },
-    imageContainer: {
-      flex:1,
-      width:1000,
-      height:150
-    },
-    button:{
-      flex:1,
-      paddingHorizontal:20,
-      margin:10,
-    }
   });
   
   export default Homescreen;

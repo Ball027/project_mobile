@@ -75,32 +75,32 @@ class EditProfilescreen extends Component {
     return (
       <>
       <View style={styles.container}>
-        <Input
+        <Input style={styles.input}
           placeholder={"First Name"}
           value={this.state.Fname}
           onChangeText={(val) => this.inputValueUpdate(val, "Fname")}
         />
-        <Input
+        <Input style={styles.input}
           placeholder={"Last Name"}
           value={this.state.Lname}
           onChangeText={(val) => this.inputValueUpdate(val, "Lname")}
         />
-        <Input
+        <Input style={styles.input}
           placeholder={"Password"}
           value={this.state.password}
           onChangeText={(val) => this.inputValueUpdate(val, "password")}
         />
-        <Input
+        <Input style={styles.input}
           placeholder={"Confirm Password"}
           value={this.state.conpass}
           onChangeText={(val) => this.inputValueUpdate(val, "conpass")}
         />
-        <Input
+        <Input style={styles.input}
           placeholder={"Faculty"}
           value={this.state.faculty}
           onChangeText={(val) => this.inputValueUpdate(val, "faculty")}
         />
-        <Input
+        <Input style={styles.input}
           placeholder={"Phone Number"}
           value={this.state.phone}
           onChangeText={(val) => this.inputValueUpdate(val, "phone")}
@@ -129,6 +129,11 @@ const styles = StyleSheet.create({
     margin:10,
     paddingHorizontal:20,
     gap:5,
+  },
+  input:{
+    backgroundColor:"orange",
+    color:"white",
+    padding:10
   }
 });
 

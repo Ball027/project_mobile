@@ -28,12 +28,9 @@ const Loginscreen = ({route, navigation}) => {
         keyboardType="email-address"
       />
       <View style={styles.btnOption}>
-        <Button 
-          title="Log in"
-          onPress={() => {
-            navigation.navigate("Draw", {screen:"Home"});
-          }}
-        />
+        <TouchableOpacity onPress={()=>{navigation.navigate("Draw", {screen:"Home"})}}>
+          <Text style={styles.btnlogin}>Login</Text>
+        </TouchableOpacity>
       </View>
         <TouchableOpacity style={styles.sign} onPress={()=>{navigation.navigate("Signin")}}>
           <Text>Don't have any account?sign in</Text>
@@ -57,10 +54,21 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight:"bold"
   },
+  btnlogin:{
+    fontSize:20,
+    backgroundColor:"orange",
+    textAlign:"center",
+    justifyContent:"center",
+    width:"auto",
+    padding:5,
+    borderRadius:10
+  },
   btnOption: {
     width: 300,
     paddingTop: 25,
     paddingBottom: 25,
+    justifyContent:"center",
+    textAlign:"center"
   },
   btnBack: {
     width: 100,

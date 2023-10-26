@@ -2,7 +2,7 @@ import React from "react";
 import {View,Text,Button,StyleSheet,Image, Alert} from "react-native";
 
 
-const Confirmscreen = (props) => {
+const Confirmscreen = ({navigation}) => {
     return (
       <>
       <View style={styles.screen}>
@@ -14,6 +14,7 @@ const Confirmscreen = (props) => {
       <Button title="Confirm"
           onPress={() => {    
           // กดแล้วหลับไปหน้า Home
+          navigation.popToTop()
           }}/>    
 
 
@@ -30,7 +31,7 @@ const Confirmscreen = (props) => {
       justifyContent: "center"
     },
 
-    title: {fontSize: 60, marginVertical: 100, fontweight: 80},
+    title: {fontSize: 60, marginVertical: 100, fontWeight:"100"},
 
     pic:{width: 130, height: 130},
 
