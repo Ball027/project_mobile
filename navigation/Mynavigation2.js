@@ -12,12 +12,15 @@ import { Entypo } from '@expo/vector-icons';
 //import screen
 import Scorescreen from "../screens/Scorescreen";
 import Homescreen from "../screens/Homescreen";
+import Calendarscreen from "../screens/Calendarscreen";
+import Courtscreen from "../screens/Courtscreen";
+import Timescreen from "../screens/Timescreen";
+import Confirmscreen from "../screens/Confirmscreen";
 import Policyscreen from "../screens/Policyscreen";
 import Loginscreen from "../screens/Loginscreen";
 import Signinscreen from "../screens/Signinscreen";
-import Settingscreen from "../screens/Settingscreen";
 import Profilescreen from "../screens/Profilescreen";
-import Logoutscreen from "../screens/Logoutscreen";
+import Notiscreen from "../screens/Notiscreen";
 import EditProfilescreen from "../screens/EditProfilescreen";
 
 const Stack = createNativeStackNavigator();
@@ -32,25 +35,29 @@ function StackNavigator() {
 
   return (
     <Stack.Navigator initialRouteName="Booking" screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Booking" component={Homescreen} />
+      <Stack.Screen name="Booking" component={Homescreen}/>
+      <Stack.Screen name="Calendar" component={Calendarscreen}/>
+      <Stack.Screen name="Court" component={Courtscreen}/>
+      <Stack.Screen name="Time" component={Timescreen}/>
+      <Stack.Screen name="Confirm" component={Confirmscreen}/>
     </Stack.Navigator>
   );
 }
 
 function Tabnavigator() {
   return (
-    <Tab.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-      <Tab.Screen name="Score" component={Scorescreen} options={{
+    <Tab.Navigator initialRouteName="หน้าหลัก" screenOptions={{ headerShown: false }}>
+      <Tab.Screen name="คะแนนความประพฤติ" component={Scorescreen} options={{
         tabBarIcon: () => {
           return <Ionicons name="people" size={30} color="orange" />;
         },
       }} />
-      <Tab.Screen name="Home" component={StackNavigator} options={{
+      <Tab.Screen name="หน้าหลัก" component={StackNavigator} options={{
         tabBarIcon: () => {
           return <Ionicons name="home" size={30} color="orange" />;
         }
       }} />
-      <Tab.Screen name="Policy" component={Policyscreen} options={{
+      <Tab.Screen name="กฎข้อตกลง" component={Policyscreen} options={{
         tabBarIcon: () => {
           return <MaterialIcons name="rule" size={30} color="orange" />;
         }
@@ -71,22 +78,22 @@ function Profilenavigator(){
 function Drawernavigator() {
   return (
     <Drawer.Navigator screenOptions={{ headerStyle: { backgroundColor: "white", }, headerTintColor: "orange", }}>
-      <Drawer.Screen name="SPORTS" component={Tabnavigator} options={{
+      <Drawer.Screen name="สนามกีฬา" component={Tabnavigator} options={{
         drawerIcon: () => {
           return <Entypo name="sports-club" size={30} color="orange" />;
         },
       }} />
-      <Drawer.Screen name="Profile" component={Profilenavigator} options={{
+      <Drawer.Screen name="โปรไฟล์" component={Profilenavigator} options={{
         drawerIcon: () => {
           return <FontAwesome name="user" size={30} color="orange" />;
         },
       }} />
-      <Drawer.Screen name="Notifications" component={Settingscreen} options={{
+      <Drawer.Screen name="สนามที่จอง" component={Notiscreen} options={{
         drawerIcon: () => {
           return <Ionicons name="notifications" size={30} color="orange" />;
         },
       }} />
-      <Drawer.Screen name="Setting" component={Settingscreen} options={{
+      {/* <Drawer.Screen name="Setting" component={Settingscreen} options={{
         drawerIcon: () => {
           return <Ionicons name="settings" size={30} color="orange" />;
         },
@@ -95,7 +102,7 @@ function Drawernavigator() {
         drawerIcon: () => {
           return <MaterialIcons name="logout" size={30} color="orange" />;
         },
-      }} />
+      }} /> */}
     </Drawer.Navigator>
   )
 }

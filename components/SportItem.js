@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     borderRadius: 0,
     overflow: "hidden",
-    padding:15
+    padding:15,
+    elevation:4,
   },
   SportHeader: {
     height: "90%",
